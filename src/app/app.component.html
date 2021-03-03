@@ -1,0 +1,13 @@
+<h1>Sisense: <small>{{loadingStatus}}</small></h1>
+
+
+<label>Widget ID: </label>
+<select style="margin: 40px 0;" (change)="reportChanged($event.target.value)" name="as">
+  <option *ngFor="let widget of widgets;" value="{{widget.widget_id}}">{{widget.widget_id}}</option>
+</select>
+
+<div id="sisenseApp" style="display: flex; flex-wrap: wrap; justify-content: space-between;;">
+  <div [hidden]="activeWidgetID !== widget.widget_id" *ngFor="let widget of widgets;" [id]="widget.eid" style="width: 400px; height: 400px; margin: 20px;">
+
+  </div>
+</div>
